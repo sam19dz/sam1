@@ -7,40 +7,124 @@
   <style>
     body {
       font-family: 'Arial', sans-serif;
-      background-color: #f2f2f2;
-      text-align: center;
-      padding: 30px;
-    }
-
-    h1 {
+      background-color: #f8f8f8;
+      margin: 0;
+      padding: 20px;
       color: #333;
     }
 
-    .telegram-btn {
-      display: inline-block;
-      background-color: #0088cc;
-      color: white;
-      padding: 12px 20px;
-      margin-top: 20px;
-      border-radius: 10px;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 18px;
-      transition: background-color 0.3s;
+    h1 {
+      text-align: center;
+      color: #111;
     }
 
-    .telegram-btn:hover {
-      background-color: #006699;
+    p {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .apps {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 30px;
+    }
+
+    .app-link {
+      background-color: #ffffff;
+      border: 1px solid #ddd;
+      border-radius: 12px;
+      padding: 15px 20px;
+      text-align: center;
+      min-width: 120px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      text-decoration: none;
+      color: #333;
+      transition: transform 0.2s;
+    }
+
+    .app-link:hover {
+      transform: scale(1.05);
+    }
+
+    .form {
+      max-width: 400px;
+      margin: 0 auto 30px;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .form input, .form select {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 16px;
+    }
+
+    .form button {
+      background-color: #0088cc;
+      color: white;
+      padding: 12px;
+      border: none;
+      width: 100%;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .form button:hover {
+      background-color: #0077b3;
+    }
+
+    .telegram-btn {
+      display: block;
+      text-align: center;
+      margin-top: 30px;
+      background-color: #0088cc;
+      color: white;
+      padding: 12px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
     }
   </style>
 </head>
 <body>
 
-  <h1>مرحبًا بك في موقع Sam-dz</h1>
-  <p>شحن الألعاب والتطبيقات بسرعة وأمان</p>
+  <h1>مرحبا بك في Sam-dz</h1>
+  <p>موقعك الموثوق لشحن الألعاب والتطبيقات بأفضل الأسعار</p>
 
-  <!-- زر تيليغرام -->
-  <a class="telegram-btn" href="https://t.me/Sam_dz19" target="_blank">📲 انضم إلى قناتنا على تيليغرام</a>
+  <div class="apps">
+    <a class="app-link" href="#">🎮 PUBG</a>
+    <a class="app-link" href="#">🔥 Free Fire</a>
+    <a class="app-link" href="#">🎵 TikTok</a>
+    <a class="app-link" href="#">⚔️ Call of Duty</a>
+    <a class="app-link" href="#">🏰 Clash of Clans</a>
+    <a class="app-link" href="#">🎯 Mobile Legends</a>
+  </div>
+
+  <div class="form">
+    <h3>طلب شحن</h3>
+    <input type="text" placeholder="اسمك الكامل" required />
+    <input type="text" placeholder="ID اللعبة" required />
+    <select>
+      <option>اختر اللعبة</option>
+      <option>PUBG</option>
+      <option>Free Fire</option>
+      <option>TikTok</option>
+      <option>Call of Duty</option>
+    </select>
+    <input type="text" placeholder="المبلغ بالدينار أو بالعملات" />
+    <button>إرسال الطلب</button>
+  </div>
+
+  <a class="telegram-btn" href="https://t.me/Sam_dz19" target="_blank">📲 تابعنا على تيليغرام</a>
 
 </body>
 </html>
