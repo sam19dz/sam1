@@ -92,4 +92,7 @@
 
   <form onsubmit="sendToWhatsApp(); return false;">
     <input type="text" id="name" placeholder="الاسم الكامل" required>
-    <input type="text" id="id" placeholder
+    <input type="text" id="id" placeholder</body>
+</html>
+
+
