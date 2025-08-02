@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
@@ -66,7 +67,8 @@
   <form onsubmit="sendToWhatsApp(); return false;">
     <input type="text" id="name" placeholder="الاسم الكامل" required>
     <input type="text" id="id" placeholder="رقم الحساب / ID" required>
-    <select id="game">
+    
+    <select id="game" required>
       <option value="">اختر اللعبة</option>
       <option>Free Fire</option>
       <option>PUBG</option>
@@ -74,6 +76,15 @@
       <option>Call of Duty</option>
       <option>غير ذلك...</option>
     </select>
+
+    <select id="package" required>
+      <option value="">اختر الباقة</option>
+      <option>100 جواهر</option>
+      <option>210 جواهر</option>
+      <option>530 جواهر</option>
+      <option>شحن مخصص</option>
+    </select>
+
     <input type="tel" id="phone" placeholder="رقم الهاتف (اختياري)">
     <button type="submit">إرسال الطلب عبر واتساب</button>
   </form>
@@ -88,9 +99,10 @@
       const name = document.getElementById("name").value;
       const id = document.getElementById("id").value;
       const game = document.getElementById("game").value;
+      const pack = document.getElementById("package").value;
       const phone = document.getElementById("phone").value;
 
-      const message = 🔵 طلب شحن جديد:%0Aالاسم: ${name}%0AID: ${id}%0Aاللعبة: ${game}%0Aالهاتف: ${phone ? phone : 'غير مدخل'};
+      const message = 🔵 طلب شحن جديد:%0Aالاسم: ${name}%0AID: ${id}%0Aاللعبة: ${game}%0Aالباقة: ${pack}%0Aالهاتف: ${phone ? phone : 'غير مدخل'};
       const number = "213668622750";
       const url = https://wa.me/${number}?text=${message};
 
