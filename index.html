@@ -1,5 +1,125 @@
-Sam-dz | شحن الألعاب body { margin: 0; font-family: 'Cairo', sans-serif; background: url('https://wallpaperaccess.com/full/1373081.jpg') no-repeat center center fixed; background-size: cover; color: #fff; text-align: center; } .container { background-color: rgba(0, 0, 0, 0.6); padding: 20px; border-radius: 15px; max-width: 500px; margin: 40px auto; } h1 { font-size: 28px; margin-bottom: 10px; } p { font-size: 16px; } .apps { display: flex; flex-direction: column; gap: 10px; margin: 20px 0; } .apps a { background-color: #1da1f2; color: white; padding: 10px; border-radius: 10px; text-decoration: none; font-weight: bold; } form { display: flex; flex-direction: column; gap: 10px; margin: 20px 0; } input, select, button { padding: 10px; border-radius: 10px; border: none; font-size: 16px; } button { background-color: #4CAF50; color: white; font-weight: bold; } .telegram { margin-top: 20px; } .telegram a { background-color: #0088cc; padding: 10px 20px; color: white; border-radius: 10px; text-decoration: none; font-weight: bold; } 
-مرحبا بك في Sam-dz
-موقع شحن ألعاب وتطبيقات بطريقة سهلة وسريعة
-<div class="apps"> <a href="#">🎮 شحن PUBG</a> <a href="#">🔥 شحن Free Fire</a> <a href="#">🎯 شحن Call of Duty</a> <a href="#">🎵 شحن TikTok</a> </div> <form id="chargeForm"> <input type="text" name="name" placeholder="اسمك" required> <input type="text" name="id" placeholder="ID اللعبة" required> <select name="game"> <option value="PUBG">PUBG</option> <option value="Free Fire">Free Fire</option> <option value="Call of Duty">Call of Duty</option> <option value="TikTok">TikTok</option> </select> <input type="number" name="amount" placeholder="المبلغ بالدينار" required> <button type="submit">🔋 إرسال الطلب</button> </form> <div class="telegram"> <a href="https://t.me/Sam_dz19" target="_blank">📩 تواصل معنا على تيليغرام</a> </div> 
-const botToken = "7599766757:AAFlhjW1PoJV-tgAhgYntF6lHu5B44fUp28"; const chatId = "213668622750"; // اكتب هنا ID الخاص بك أو بالقناة (يجب أن يكون البوت مشرف) document.getElementById("chargeForm").addEventListener("submit", function(event) { event.preventDefault(); const formData = new FormData(this); const name = formData.get("name"); const id = formData.get("id"); const game = formData.get("game"); const amount = formData.get("amount"); const message = 📝 طلب شحن:\n\n👤 الاسم: ${name}\n🆔 ID: ${id}\n🎮 اللعبة: ${game}\n💰 المبلغ: ${amount} DA; fetch(https://api.telegram.org/bot${botToken}/sendMessage, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ chat_id: chatId, text: message }) }) .then(response => alert("✅ تم إرسال الطلب بنجاح!")) .catch(error => alert("❌ حدث خطأ! تأكد من البوت")); });
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sam-dz | شحن الألعاب</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Cairo', sans-serif;
+      background: url('https://wallpaperaccess.com/full/1373081.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+      text-align: center;
+    }
+    .container {
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 20px;
+      border-radius: 15px;
+      max-width: 500px;
+      margin: 40px auto;
+    }
+    h1 { font-size: 28px; margin-bottom: 10px; }
+    p { font-size: 16px; }
+    .apps {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin: 20px 0;
+    }
+    .apps a {
+      background-color: #1da1f2;
+      color: white;
+      padding: 10px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin: 20px 0;
+    }
+    input, select, button {
+      padding: 10px;
+      border-radius: 10px;
+      border: none;
+      font-size: 16px;
+    }
+    button {
+      background-color: #4CAF50;
+      color: white;
+      font-weight: bold;
+    }
+    .telegram {
+      margin-top: 20px;
+    }
+    .telegram a {
+      background-color: #0088cc;
+      padding: 10px 20px;
+      color: white;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>مرحبا بك في Sam-dz</h1>
+    <p>موقع شحن ألعاب وتطبيقات بطريقة سهلة وسريعة</p>
+
+    <div class="apps">
+      <a href="#">🎮 شحن PUBG</a>
+      <a href="#">🔥 شحن Free Fire</a>
+      <a href="#">🎯 شحن Call of Duty</a>
+      <a href="#">🎵 شحن TikTok</a>
+    </div>
+
+    <form id="chargeForm">
+      <input type="text" name="name" placeholder="الاسم" required />
+      <input type="text" name="id" placeholder="ID اللعبة" required />
+      <select name="game" required>
+        <option value="">اختر اللعبة</option>
+        <option value="PUBG">PUBG</option>
+        <option value="Free Fire">Free Fire</option>
+        <option value="Call of Duty">Call of Duty</option>
+        <option value="TikTok">TikTok</option>
+      </select>
+      <input type="number" name="amount" placeholder="المبلغ بالدينار" required />
+      <button type="submit">🔋 إرسال الطلب</button>
+    </form>
+
+    <div class="telegram">
+      <a href="https://t.me/Sam_dz19" target="_blank">📩 تواصل معنا على تيليغرام</a>
+    </div>
+  </div>
+
+  <script>
+    const botToken = "7599766757:AAFlhjW1PoJV-tgAhgYntF6lHu5B44fUp28";
+    const chatId = "213668622750"; // ID الخاص بك
+
+    document.getElementById("chargeForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+      const formData = new FormData(this);
+      const name = formData.get("name");
+      const id = formData.get("id");
+      const game = formData.get("game");
+      const amount = formData.get("amount");
+
+      const message = 📝 طلب شحن:\n\n👤 الاسم: ${name}\n🆔 ID: ${id}\n🎮 اللعبة: ${game}\n💰 المبلغ: ${amount} DA;
+
+      fetch(https://api.telegram.org/bot${botToken}/sendMessage, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ chat_id: chatId, text: message })
+      })
+      .then(response => alert("✅ تم إرسال الطلب بنجاح!"))
+      .catch(error => alert("❌ حدث خطأ! تأكد من أن البوت مشرف بالقناة أو الرقم صحيح."));
+    });
+  </script>
+</body>
+</html>
