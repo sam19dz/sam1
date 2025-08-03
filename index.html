@@ -36,6 +36,15 @@
       border-radius: 10px;
       text-decoration: none;
       font-weight: bold;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      justify-content: center;
+    }
+    .apps img {
+      width: 24px;
+      height: 24px;
+      border-radius: 5px;
     }
     form {
       display: flex;
@@ -73,10 +82,10 @@
     <p>موقع شحن ألعاب وتطبيقات بطريقة سهلة وسريعة</p>
 
     <div class="apps">
-      <a href="#">🎮 شحن PUBG</a>
-      <a href="#">🔥 شحن Free Fire</a>
-      <a href="#">🎯 شحن Call of Duty</a>
-      <a href="#">🎵 شحن TikTok</a>
+      <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/0/09/PUBG_Logo.svg" alt="PUBG" />شحن PUBG</a>
+      <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/2/20/Garena_Free_Fire_logo.png" alt="Free Fire" />شحن Free Fire</a>
+      <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Call_of_Duty_Logo.svg" alt="Call of Duty" />شحن Call of Duty</a>
+      <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/0/09/TikTok_logo.svg" alt="TikTok" />شحن TikTok</a>
     </div>
 
     <form id="chargeForm">
@@ -100,7 +109,7 @@
 
   <script>
     const botToken = "7599766757:AAFlhjW1PoJV-tgAhgYntF6lHu5B44fUp28";
-    const chatId = "213668622750"; // ID الخاص بك
+    const chatId = "213668622750";
 
     document.getElementById("chargeForm").addEventListener("submit", function(event) {
       event.preventDefault();
@@ -111,15 +120,3 @@
       const amount = formData.get("amount");
 
       const message = 📝 طلب شحن:\n\n👤 الاسم: ${name}\n🆔 ID: ${id}\n🎮 اللعبة: ${game}\n💰 المبلغ: ${amount} DA;
-
-      fetch(https://api.telegram.org/bot${botToken}/sendMessage, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ chat_id: chatId, text: message })
-      })
-      .then(response => alert("✅ تم إرسال الطلب بنجاح!"))
-      .catch(error => alert("❌ حدث خطأ! تأكد من أن البوت مشرف بالقناة أو الرقم صحيح."));
-    });
-  </script>
-</body>
-</html>
